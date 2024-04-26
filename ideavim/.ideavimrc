@@ -1,0 +1,101 @@
+" ------------------------------------- Editing and Reloading the .ideavimrc ------------------------
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+" ------------------------------------- Leader Key --------------------------------------------------
+" The Leader Key
+let mapleader=" "
+
+" ------------------------------------- Editor Closing Actions --------------------------------------
+" close the current editor
+nnoremap <leader>cc :action CloseContent<CR>
+" close all editors
+nnoremap <leader>ca :action CloseAllEditors<CR>
+" close all editors but the active one
+nnoremap <leader>cb :action CloseAllEditorsButActive<CR>
+" close all unmodified editors
+nnoremap <leader>cu :action CloseAllUnmodifiedEditors<CR>
+" close the current editor
+nnoremap <leader>ce :action CloseEditor<CR>
+
+" ------------------------------------- Editor Navigation Actions --------------------------------------
+" go back
+nnoremap <leader>gb :action Back<CR>
+" go forward
+nnoremap <leader>gf :action Forward<CR>
+" go to a class
+nnoremap <leader>gc :action GotoClass<CR>
+" go to a file
+nnoremap <leader>gF :action GotoFile<CR>
+" go to next tab using TAB
+nnoremap <TAB> :action NextTab<CR>
+" go to previous tab using SHIFT+TAB
+nnoremap <S-TAB> :action PreviousTab<CR>
+" open recent files
+nnoremap <leader>gr :action RecentFiles<CR>
+" go to recent locations
+nnoremap <leader>gl :action RecentLocations<CR>
+" search everywhere
+nnoremap <leader>gs :action SearchEverywhere<CR>
+" go to a symbol
+nnoremap <leader>gS :action GotoSymbol<CR>
+
+" ------------------------------------- Terminal Actions --------------------------------------
+" open terminal
+nnoremap <leader>ot :action ActivateTerminalToolWindow<CR>
+
+" ------------------------------------- Refactoring Actions --------------------------------------
+" rename
+nnoremap <leader>rr :action RenameElement<CR>
+" extract variable
+nnoremap <leader>rv :action IntroduceVariable<CR>
+" extract constant
+nnoremap <leader>rc :action IntroduceConstant<CR>
+" extract field
+nnoremap <leader>rf :action IntroduceField<CR>
+" extract parameter
+nnoremap <leader>rp :action IntroduceParameter<CR>
+" extract method
+nnoremap <leader>rm :action ExtractMethod<CR>
+" extract interface
+nnoremap <leader>ri :action ExtractInterface<CR>
+" extract superclass
+nnoremap <leader>rs :action ExtractSuperclass<CR>
+" change signature
+nnoremap <leader>rg :action ChangeSignature<CR>
+
+" ------------------------------------- Code Insight Actions --------------------------------------
+" quick fix
+nnoremap <leader>qf :action ShowIntentionActions<CR>
+" find usages
+nnoremap <leader>fu :action FindUsages<CR>
+" show usages
+nnoremap <leader>su :action ShowUsages<CR>
+" show declaration
+nnoremap <leader>sd :action GoToImplementation<CR>
+
+" ------------------------------------- Plugins --------------------------------------
+set NERDTree
+" open NERDTree
+nnoremap <leader>nt :NERDTreeToggle<CR>
+" open NERDTreeFind
+nnoremap <leader>nf :NERDTreeFind<CR>
+
+Plug 'easymotion/vim-easymotion'
+map <leader>F <Plug>(easymotion-s)
+map <leader>f <Plug>(easymotion-f)
+
+" ------------------------------------- Misc --------------------------------------
+nnoremap o o<esc>
+nnoremap O O<esc>
+inoremap jj <esc>
+
+
+" ------------------------------------- Run and Debug Actions --------------------------------------
+" run
+nnoremap <leader>rr :action Run<CR>
+" debug
+nnoremap <leader>rd :action Debug<CR>
+" stop
+nnoremap <leader>rs :action Stop<CR>
+
