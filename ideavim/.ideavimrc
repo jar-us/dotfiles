@@ -1,101 +1,76 @@
-" ------------------------------------- Editing and Reloading the .ideavimrc ------------------------
+" open ~/.ideavimrc file by pressing \e
 nnoremap \e :e ~/.ideavimrc<CR>
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
-" ------------------------------------- Leader Key --------------------------------------------------
-" The Leader Key
-let mapleader=" "
+" source ~/.ideavimrc file by pressing \s
+nnoremap \s :source ~/.ideavimrc<CR>
 
-" ------------------------------------- Editor Closing Actions --------------------------------------
-" close the current editor
-nnoremap <leader>cc :action CloseContent<CR>
-" close all editors
-nnoremap <leader>ca :action CloseAllEditors<CR>
-" close all editors but the active one
-nnoremap <leader>cb :action CloseAllEditorsButActive<CR>
-" close all unmodified editors
-nnoremap <leader>cu :action CloseAllUnmodifiedEditors<CR>
-" close the current editor
-nnoremap <leader>ce :action CloseEditor<CR>
+" leader key
+let mapleader = " "
 
-" ------------------------------------- Editor Navigation Actions --------------------------------------
-" go back
-nnoremap <leader>gb :action Back<CR>
-" go forward
-nnoremap <leader>gf :action Forward<CR>
-" go to a class
-nnoremap <leader>gc :action GotoClass<CR>
-" go to a file
-nnoremap <leader>gF :action GotoFile<CR>
-" go to next tab using TAB
-nnoremap <TAB> :action NextTab<CR>
-" go to previous tab using SHIFT+TAB
-nnoremap <S-TAB> :action PreviousTab<CR>
-" open recent files
-nnoremap <leader>gr :action RecentFiles<CR>
-" go to recent locations
-nnoremap <leader>gl :action RecentLocations<CR>
-" search everywhere
-nnoremap <leader>gs :action SearchEverywhere<CR>
-" go to a symbol
-nnoremap <leader>gS :action GotoSymbol<CR>
-
-" ------------------------------------- Terminal Actions --------------------------------------
-" open terminal
-nnoremap <leader>ot :action ActivateTerminalToolWindow<CR>
-
-" ------------------------------------- Refactoring Actions --------------------------------------
-" rename
-nnoremap <leader>rr :action RenameElement<CR>
-" extract variable
-nnoremap <leader>rv :action IntroduceVariable<CR>
-" extract constant
-nnoremap <leader>rc :action IntroduceConstant<CR>
-" extract field
-nnoremap <leader>rf :action IntroduceField<CR>
-" extract parameter
-nnoremap <leader>rp :action IntroduceParameter<CR>
-" extract method
-nnoremap <leader>rm :action ExtractMethod<CR>
-" extract interface
-nnoremap <leader>ri :action ExtractInterface<CR>
-" extract superclass
-nnoremap <leader>rs :action ExtractSuperclass<CR>
-" change signature
-nnoremap <leader>rg :action ChangeSignature<CR>
-
-" ------------------------------------- Code Insight Actions --------------------------------------
-" quick fix
-nnoremap <leader>qf :action ShowIntentionActions<CR>
-" find usages
-nnoremap <leader>fu :action FindUsages<CR>
-" show usages
-nnoremap <leader>su :action ShowUsages<CR>
-" show declaration
-nnoremap <leader>sd :action GoToImplementation<CR>
-
-" ------------------------------------- Plugins --------------------------------------
-set NERDTree
-" open NERDTree
-nnoremap <leader>nt :NERDTreeToggle<CR>
-" open NERDTreeFind
-nnoremap <leader>nf :NERDTreeFind<CR>
-
-Plug 'easymotion/vim-easymotion'
-map <leader>F <Plug>(easymotion-s)
-map <leader>f <Plug>(easymotion-f)
-
-" ------------------------------------- Misc --------------------------------------
+" insert empty line below the cursor and do not enter insert mode
 nnoremap o o<esc>
+" insert empty line above the cursor and do not enter insert mode
 nnoremap O O<esc>
+" exit from insert mode by pressing jj
 inoremap jj <esc>
 
 
-" ------------------------------------- Run and Debug Actions --------------------------------------
-" run
-nnoremap <leader>rr :action Run<CR>
-" debug
-nnoremap <leader>rd :action Debug<CR>
-" stop
-nnoremap <leader>rs :action Stop<CR>
 
+
+" ----------------- NERDTree ---------------------------
+" enable NERDTree
+set NERDTree
+
+" open file or directory -> o
+" open directory recursively -> O
+" open file in vertical split -> s
+
+" close parent directory -> x
+" close all children directory -> X
+
+" jump to parent directory j> p
+" jump to root directory -> P
+" jump to next sibling directory -> <C-J>
+" jump to previous sibling directory -> <C-K>
+
+" refresh current directory -> r
+nnoremap <Leader>n :NERDTreeFocus<CR>
+" ----------------- NERDTree --------------------------
+
+
+
+
+" ----------------- Tab -------------------------------
+" move to next tab
+nnoremap <TAB> :action NextTab<CR>
+" move to previous tab
+nnoremap <S-TAB> :action PreviousTab<CR>
+" ----------------- Tab -------------------------------
+
+
+
+
+" ----------------- Start Application -----------------
+" run the application
+nnoremap <Leader>r :action Run<CR>
+" stop the application
+nnoremap <Leader>s :action Stop<CR>
+" ----------------- Start Application -----------------
+
+
+
+
+" ----------------- rename file -----------------------
+" rename file
+nnoremap <Leader>rn :action RenameFile<CR>
+" ----------------- rename file -----------------------
+
+
+
+
+" ----------------- EasyMotion ------------------------
+Plug 'easymotion/vim-easymotion'
+
+
+nnoremap \p :e ~/IdeaProjects/gp-spring-data-jpa/src/main/resources/application.properties<CR>
+nnoremap \g :e ~/IdeaProjects/gp-spring-data-jpa/build.gradle<CR>
