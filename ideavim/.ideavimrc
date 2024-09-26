@@ -1,0 +1,76 @@
+" open ~/.ideavimrc file by pressing \e
+nnoremap \e :e ~/.ideavimrc<CR>
+
+" source ~/.ideavimrc file by pressing \s
+nnoremap \s :source ~/.ideavimrc<CR>
+
+" leader key
+let mapleader = " "
+
+" insert empty line below the cursor and do not enter insert mode
+nnoremap o o<esc>
+" insert empty line above the cursor and do not enter insert mode
+nnoremap O O<esc>
+" exit from insert mode by pressing jj
+inoremap jj <esc>
+
+
+
+
+" ----------------- NERDTree ---------------------------
+" enable NERDTree
+set NERDTree
+
+" open file or directory -> o
+" open directory recursively -> O
+" open file in vertical split -> s
+
+" close parent directory -> x
+" close all children directory -> X
+
+" jump to parent directory j> p
+" jump to root directory -> P
+" jump to next sibling directory -> <C-J>
+" jump to previous sibling directory -> <C-K>
+
+" refresh current directory -> r
+nnoremap <Leader>n :NERDTreeFocus<CR>
+" ----------------- NERDTree --------------------------
+
+
+
+
+" ----------------- Tab -------------------------------
+" move to next tab
+nnoremap <TAB> :action NextTab<CR>
+" move to previous tab
+nnoremap <S-TAB> :action PreviousTab<CR>
+" ----------------- Tab -------------------------------
+
+
+
+
+" ----------------- Start Application -----------------
+" run the application
+nnoremap <Leader>r :action Run<CR>
+" stop the application
+nnoremap <Leader>s :action Stop<CR>
+" ----------------- Start Application -----------------
+
+
+
+
+" ----------------- rename file -----------------------
+" rename file
+nnoremap <Leader>rn :action RenameFile<CR>
+" ----------------- rename file -----------------------
+
+
+
+
+" ----------------- EasyMotion ------------------------
+Plug 'easymotion/vim-easymotion'
+
+
+nnoremap \p :e ~/IdeaProjects/gp-spring-data-jpa/src/main/resources/application.properties<CR>
+nnoremap \g :e ~/IdeaProjects/gp-spring-data-jpa/build.gradle<CR>

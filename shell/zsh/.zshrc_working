@@ -1,0 +1,32 @@
+JAVA11012=$PWD/Applications/jdk-11.0.12.jdk/Contents/Home
+MAVEN382=$PWD/Applications/apache-maven-3.8.2/bin
+GRADLE691=$PWD/Applications/gradle-6.9.1/bin
+
+CURRENT_JAVA=$JAVA11012
+CURRENT_MAVEN=$MAVEN382
+CURRENT_GRADLE=$GRADLE691
+
+export JAVA_HOME=$CURRENT_JAVA
+export PATH=$CURRENT_JAVA/bin:$PATH
+export PATH=$CURRENT_MAVEN:$PATH
+export PATH=$CURRENT_GRADLE:$PATH
+
+export ZSH="/Users/sursharm10/.oh-my-zsh"
+
+# --- Themes ---
+ZSH_THEME="agnoster"
+
+
+# --- Plugins ---
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# --- alias ---
+alias assume-role='~/Applications/aws-sso-mac assume onelogin --username a-INE12377172@global.tesco.org --account_id 065744917342 --role aurora-colleaguewsa'
+alias start-dex-client='~/aurora/dex-client.sh'
+alias start-postgres-container='cd ~/IdeaProjects/NEwWageTransfersBFF/docker/local_environment && ls && docker-compose -f docker-compose.yml up new-wage-transfers-db'
+alias tm='tmux'
